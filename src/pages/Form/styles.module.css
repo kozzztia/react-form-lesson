@@ -1,0 +1,8 @@
+.formContainer {
+    background: var(--content-bg);
+    border-radius: var(--radius);
+    min-width: 680px;
+    min-height: 680px;
+    position: relative;
+    padding : 50px 40px;
+}

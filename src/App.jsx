@@ -1,8 +1,11 @@
+import { ReactFrom } from './pages'
 
 
 function App() {
   return (
-	<div>form </div>
+	<>
+    <ReactFrom />
+  </>
   );
 }
 
