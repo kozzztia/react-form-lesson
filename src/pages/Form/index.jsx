@@ -56,17 +56,17 @@ const ReactForm = () => {
               <Field type="date" name="birthday" />
               <ErrorMessage name="birthday" component="div" className={styles.error} />
             </label>
-            <div>
+            <div className={styles.gender}>
               <legend>Gender</legend>
               <label>
                 <Field type="radio" name="gender" value="male" />
-                male
+                <p>male</p>
               </label>
               <label>
                 <Field type="radio" name="gender" value="female" />
-                female
+                <p>female</p>
               </label>
-              <ErrorMessage name="gender" component="div" className={styles.error} />
+              {/* <ErrorMessage name="gender" component="div" className={styles.error} /> */}
             </div>
             <label>
               <legend>email</legend>
@@ -89,6 +89,7 @@ const ReactForm = () => {
                 <option value="5">option 5</option>
               </Field>
               <ErrorMessage name="country" component="div" className={styles.error} />
+              <span></span>
             </label>
 
             <button type="submit" disabled={isSubmitting}>Submit</button>
