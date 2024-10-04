@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import styles from './styles.module.css';
 import { Formik, Form, Field, ErrorMessage } from 'formik';
 import * as Yup from 'yup';
@@ -23,20 +23,25 @@ const validationSchema = Yup.object({
   phoneNumber: Yup.string()
     .required('Phone number is required'),
   option: Yup.string()
-    .required('Country is required'),
+    .required('option is required'),
 });
 
 
 const ReactForm = () => {
+  const [status, setStatus] = useState("registration");
   return (
     <section className={styles.formContainer}>
-      <h2>Registration Form</h2>
-
+      <h2>{status}</h2>
       <Formik
         initialValues={{ firstName: '', lastName: '', birthday: '', gender: '', email: '', phoneNumber: '', option: '' }}
         validationSchema={validationSchema}
         onSubmit={(values, { resetForm }) => {
-          resetForm()
+          setStatus("sending...");
+          setTimeout(() => {
+            setStatus("success");
+            alert(JSON.stringify(values, null, 2));
+            resetForm()
+          })
           console.log(values)
         }}>
         {({ isSubmitting }) => (
@@ -66,7 +71,7 @@ const ReactForm = () => {
                 <Field type="radio" name="gender" value="female" />
                 <p>female</p>
               </label>
-              {/* <ErrorMessage name="gender" component="div" className={styles.error} /> */}
+              <ErrorMessage name="gender" component="div" className={styles.error} />
             </div>
             <label>
               <legend>email</legend>
@@ -88,7 +93,7 @@ const ReactForm = () => {
                 <option value="4">option 4</option>
                 <option value="5">option 5</option>
               </Field>
-              <ErrorMessage name="country" component="div" className={styles.error} />
+              <ErrorMessage name="option" component="div" className={styles.error} />
               <span></span>
             </label>
 
