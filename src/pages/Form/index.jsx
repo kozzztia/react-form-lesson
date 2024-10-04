@@ -41,7 +41,7 @@ const ReactForm = () => {
             setStatus("success");
             alert(JSON.stringify(values, null, 2));
             resetForm()
-          })
+          },2000)
           console.log(values)
         }}>
         {({ isSubmitting }) => (
