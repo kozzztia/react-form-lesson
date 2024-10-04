@@ -1,8 +1,58 @@
 .formContainer {
     background: var(--content-bg);
     border-radius: var(--radius);
-    min-width: 680px;
+    max-width: 680px;
+    width: 100%;
     min-height: 680px;
     position: relative;
-    padding : 50px 40px;
+    padding: 57px 65px 65px;
+    box-shadow: 0 0 5px #000;
+
+    h2 {
+        width: 100%;
+        text-align: start;
+        font-size: 24px;
+        font-weight: 400;
+        margin-bottom: 40px;
+
+    }
+}
+
+.form {
+    width: 100%;
+    height: auto;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+
+    label {
+        width: 50%;
+        input{
+            background: var(--content-bg);
+        }
+    }
+
+    label:has(select[name="option"]) {
+        width: 100%;
+    }
+
+    button {
+        background: var(--button-color);
+        color :#fff;
+        transition: all 0.4s ease;
+        cursor: pointer;
+        transition: all 0.4s ease;
+        cursor: pointer;
+        font-size: 18px;
+        font-size: 18px;
+        padding: 0 50px;
+        line-height: 50px;
+        border-radius: 5px;
+
+        &:hover {
+            background: #3868cd;
+        }
+
+    }
+
 }

@@ -1,23 +1,11 @@
 :root {
-  font-size: 16px;
-  line-height: 24px;
-  font-weight: 400;
   --body-bg-gradient: linear-gradient(to top right, #fc2c77 0%, #6c4079 100%);
-  --color: #525252;
+  --color: #555;
+  --title-color : #555;
   --button-color: #4272d7;
   --content-bg: #fff;
-  --max-width: 1440px;
-  --padding: 10px;
   --radius: 10px;
-
-
-  @media screen and (max-width: 768px) {
-    --padding: 5px;
-  }
-
-  @media screen and (max-width: 480px) {
-    --padding: 2px;
-  }
+  --input-bg: #fafafa;
 }
 
 * {
@@ -32,7 +20,7 @@ body {
 
   font-family: "Poppins", "Arial", "Helvetica Neue", sans-serif;
   font-weight: 400;
-  font-size: 14px;
+  font-size: var(--font-size);
 }
 
 main{
@@ -47,4 +35,11 @@ button{
   cursor: pointer;
   border: none;
   outline: none;
+}
+
+h2{
+  font-size: 24px;
+}
+input{
+  font-size: 14px;
 }
